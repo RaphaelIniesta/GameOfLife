@@ -11,6 +11,8 @@
 		646D36DB2B8D06CC00BAB7AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D36DA2B8D06CC00BAB7AF /* ContentView.swift */; };
 		646D36DD2B8D06CD00BAB7AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646D36DC2B8D06CD00BAB7AF /* Assets.xcassets */; };
 		646D36E02B8D06CD00BAB7AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646D36DF2B8D06CD00BAB7AF /* Preview Assets.xcassets */; };
+		646D36E72B8E841200BAB7AF /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D36E62B8E841200BAB7AF /* Rules.swift */; };
+		646D36E92B8E842D00BAB7AF /* CreateMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D36E82B8E842D00BAB7AF /* CreateMatrix.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		646D36DA2B8D06CC00BAB7AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		646D36DC2B8D06CD00BAB7AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		646D36DF2B8D06CD00BAB7AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		646D36E62B8E841200BAB7AF /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		646D36E82B8E842D00BAB7AF /* CreateMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatrix.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				646D36D82B8D06CC00BAB7AF /* GameOfLifeApp.swift */,
 				646D36DA2B8D06CC00BAB7AF /* ContentView.swift */,
+				646D36E82B8E842D00BAB7AF /* CreateMatrix.swift */,
+				646D36E62B8E841200BAB7AF /* Rules.swift */,
 				646D36DC2B8D06CD00BAB7AF /* Assets.xcassets */,
 				646D36DE2B8D06CD00BAB7AF /* Preview Content */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				646D36DB2B8D06CC00BAB7AF /* ContentView.swift in Sources */,
 				646D36D92B8D06CC00BAB7AF /* GameOfLifeApp.swift in Sources */,
+				646D36E92B8E842D00BAB7AF /* CreateMatrix.swift in Sources */,
+				646D36E72B8E841200BAB7AF /* Rules.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
