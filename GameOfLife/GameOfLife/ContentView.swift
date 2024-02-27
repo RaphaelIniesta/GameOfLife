@@ -30,7 +30,7 @@ struct ContentView: View {
     // 3. Qualquer célula viva com mais de três vizinhos vivos morre, por superpopulação
     // 4. Qualquer célula morta com exatamente três vizinhos vivos se torna uma célula viva, por reprodução
     
-    func leis(matriz: [[Int]]) {
+    func nextStep(matriz: [[Int]]) -> [[Int]] {
         var next = matriz
         
         var counter = 0
@@ -105,79 +105,99 @@ struct ContentView: View {
                 }
                 
                 // Casos das bordas superior e inferior
-                switch(i) {
-                case 0: do {
-                    // TODO: Caso borda superior
-                    counter = matriz[i][j-1] + matriz[i+1][j-1] + matriz[i+1][j] + matriz[i+1][j+1] + matriz[i][j+1]
-                    
-                    if (matriz[i][j] == 0) {
-                        if (counter == 3) {
-                            next[i][j] = 1
-                        } else if ((counter < 2) || (counter > 3)) {
-                            next[i][j] = 0
+                if ((j > 0) && (j < matriz[i].count-1)) {
+                    switch(i) {
+                    case 0: do {
+                        // TODO: Caso borda superior
+                        counter = matriz[i][j-1] + matriz[i+1][j-1] + matriz[i+1][j] + matriz[i+1][j+1] + matriz[i][j+1]
+                        
+                        if (matriz[i][j] == 0) {
+                            if (counter == 3) {
+                                next[i][j] = 1
+                            } else if ((counter < 2) || (counter > 3)) {
+                                next[i][j] = 0
+                            }
                         }
+                        counter = 0
+                        
+                        break
                     }
-                    counter = 0
-                    
-                    break
-                }
-                case matriz.count-1: do {
-                    // TODO: Caso borda inferior
-                    counter = matriz[i][j-1] + matriz[i-1][j-1] + matriz[i-1][j] + matriz[i-1][j+1] + matriz[i][j+1]
-                    
-                    if (matriz[i][j] == 0) {
-                        if (counter == 3) {
-                            next[i][j] = 1
-                        } else if ((counter < 2) || (counter > 3)) {
-                            next[i][j] = 0
+                    case matriz.count-1: do {
+                        // TODO: Caso borda inferior
+                        counter = matriz[i][j-1] + matriz[i-1][j-1] + matriz[i-1][j] + matriz[i-1][j+1] + matriz[i][j+1]
+                        
+                        if (matriz[i][j] == 0) {
+                            if (counter == 3) {
+                                next[i][j] = 1
+                            } else if ((counter < 2) || (counter > 3)) {
+                                next[i][j] = 0
+                            }
                         }
+                        counter = 0
+                        
+                        break
                     }
-                    counter = 0
-                    
-                    break
-                }
-                default: break
+                    default: break
+                    }
                 }
                 
                 // Casos das bordas esquerda e direita
-                switch(j) {
-                case 0: do {
-                    // TODO: Caso borda esquerda
-                    counter = matriz[i-1][0] + matriz[i-1][1] + matriz[i][1] + matriz[i+1][1] + matriz[i+1][0]
+                if ((i > 0) && (i < matriz.count-1)) {
+                    switch(j) {
+                    case 0: do {
+                        // TODO: Caso borda esquerda
+                        counter = matriz[i-1][0] + matriz[i-1][1] + matriz[i][1] + matriz[i+1][1] + matriz[i+1][0]
+                        
+                        if (matriz[i][j] == 0) {
+                            if (counter == 3) {
+                                next[i][j] = 1
+                            } else if ((counter < 2) || (counter > 3)) {
+                                next[i][j] = 0
+                            }
+                        }
+                        counter = 0
+                        
+                        break
+                    }
+                    case matriz.count-1: do {
+                        // TODO: Caso borda direita
+                        counter = matriz[i-1][j] + matriz[i-1][j-1] + matriz[i][j-1] + matriz[i+1][j-1] + matriz[i+1][j]
+                        
+                        if (matriz[i][j] == 0) {
+                            if (counter == 3) {
+                                next[i][j] = 1
+                            } else if ((counter < 2) || (counter > 3)) {
+                                next[i][j] = 0
+                            }
+                        }
+                        counter = 0
+                        
+                        break
+                    }
+                    default: break
+                    }
+                }
+                
+                // Casos gerais
+                if (((i > 0) && (i < matriz.count-1)) && ((j > 0) && (j < matriz[i].count-1))) {
+                    counter = matriz[i-1][j-1] + matriz[i-1][j] + matriz[i-1][j+1] + matriz[i][j+1] + matriz[i+1][j+1] + matriz[i+1][j] + matriz[i+1][j-1] + matriz[i][j-1]
                     
                     if (matriz[i][j] == 0) {
                         if (counter == 3) {
                             next[i][j] = 1
-                        } else if ((counter < 2) || (counter > 3)) {
-                            next[i][j] = 0
                         }
+                    } else if ((counter < 2) || counter > 3) {
+                        next[i][j] = 0
                     }
-                    counter = 0
-                    
-                    break
-                }
-                case matriz.count-1: do {
-                    // TODO: Caso borda direita
-                    counter = matriz[i-1][j] + matriz[i-1][j-1] + matriz[i][j-1] + matriz[i+1][j-1] + matriz[i+1][j]
-                    
-                    if (matriz[i][j] == 0) {
-                        if (counter == 3) {
-                            next[i][j] = 1
-                        } else if ((counter < 2) || (counter > 3)) {
-                            next[i][j] = 0
-                        }
-                    }
-                    counter = 0
-                    
-                    break
-                }
-                default: break
                 }
             }
         }
+        
+        return next
     }
     
     @State var matriz: [[Int]] = []
+    @State private var isFull: Bool = true
     
     var cols = 5
     var rows = 5
@@ -203,18 +223,26 @@ struct ContentView: View {
             
             Button {
                 matriz = criaMatriz(cols: cols, rows: rows)
-                for i in (0...matriz.count-1) {
-                    for j in (0...matriz[i].count-1) {
-                        print(matriz[i][j], terminator: "")
-                    }
-                    print("\n")
+                if(isFull) {
+                    isFull.toggle()
                 }
             } label: {
-                Text("Gerar Aleatório")
+                Text("Gerar Grid Aleatória")
                     .foregroundStyle(.white)
             }
             .frame(width: 150, height: 50)
             .background(RoundedRectangle(cornerRadius: 15.0).fill(.blue))
+            
+            Button {
+                matriz = nextStep(matriz: matriz)
+            } label: {
+                Text("Next Step")
+                    .foregroundStyle(.white)
+            }
+            .frame(width: 150, height: 50)
+            .background(RoundedRectangle(cornerRadius: 15.0).fill(.blue))
+            .grayscale(isFull ? 1 : 0)
+            .disabled(isFull)
             
         }
         .padding()
