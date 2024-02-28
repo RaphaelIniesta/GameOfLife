@@ -18,53 +18,127 @@ struct ContentView: View {
     @State var matriz: [[Int]] = []
     @State private var isFull: Bool = true
     
-    var cols = 5
-    var rows = 5
+    @State var colsString: String = ""
+    @State var rowsString: String = ""
+    
+    @State var cols = 5
+    @State var rows = 5
+    
+    @State var colsIsUsed: Bool = false
+    @State var rowsIsUsed: Bool = false
     
     var body: some View {
-        VStack {
-            
-            ForEach(0..<matriz.count, id: \.self) { i in
-                HStack {
-                    ForEach(0..<matriz[i].count, id: \.self) { j in
-                        if (matriz[i][j] == 1) {
-                            RoundedRectangle(cornerRadius: 7)
-                                .frame(width: 30, height: 30)
-                                .foregroundStyle(.cyan)
-                        } else {
-                            RoundedRectangle(cornerRadius: 7)
-                                .frame(width: 30, height: 30)
-                                .foregroundStyle(.gray)
+        NavigationStack {
+            VStack {
+                ForEach(0..<matriz.count, id: \.self) { i in
+                    HStack {
+                        ForEach(0..<matriz[i].count, id: \.self) { j in
+                            if (matriz[i][j] == 1) {
+                                RoundedRectangle(cornerRadius: 7)
+                                    .frame(width: 30, height: 30)
+                                    .foregroundStyle(.cyan)
+                                    .onTapGesture(perform: {
+                                        if (matriz[i][j] == 1) {
+                                            matriz[i][j] = 0
+                                        } else {
+                                            matriz[i][j] = 1
+                                        }
+                                    })
+                            } else {
+                                RoundedRectangle(cornerRadius: 7)
+                                    .frame(width: 30, height: 30)
+                                    .foregroundStyle(.gray)
+                                    .onTapGesture(perform: {
+                                        if (matriz[i][j] == 1) {
+                                            matriz[i][j] = 0
+                                        } else {
+                                            matriz[i][j] = 1
+                                        }
+                                    })
+                            }
                         }
                     }
                 }
-            }
-            
-            Button {
-                matriz = criaMatriz(cols: cols, rows: rows)
-                if(isFull) {
-                    isFull.toggle()
+                
+                HStack {
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("Linhas")
+                        
+                        TextField("Linhas", text: $rowsString)
+                            .textFieldStyle(.roundedBorder)
+                    }
+                    
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("Colunas")
+                        
+                        TextField("Colunas", text: $colsString)
+                            .textFieldStyle(.roundedBorder)
+                    }
                 }
-            } label: {
-                Text("Gerar Grid Aleatória")
-                    .foregroundStyle(.white)
+                
             }
-            .frame(width: 150, height: 50)
-            .background(RoundedRectangle(cornerRadius: 15.0).fill(.blue))
-            
-            Button {
-                matriz = nextStep(matriz: matriz)
-            } label: {
-                Text("Next Step")
-                    .foregroundStyle(.white)
+            .padding()
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        cols = Int(colsString) ?? 5
+                        rows = Int(rowsString) ?? 5
+                        
+                        matriz = createRandomMatrix(cols: cols, rows: rows)
+                        if(isFull) {
+                            isFull.toggle()
+                        }
+                    } label: {
+                        Image(systemName: "shuffle.circle")
+                            .font(.title2)
+                    }
+                }
+                
+                ToolbarItem(placement: .bottomBar) {
+                    Button {
+                        if(isFull) {
+                            isFull.toggle()
+                        }
+                        
+                        cols = Int(colsString) ?? 7
+                        rows = Int(rowsString) ?? 7
+                        
+                        matriz = createMatrix(cols: cols, rows: rows)
+                    } label: {
+                        Text("Generate Grid")
+                            .foregroundStyle(.white)
+                    }
+                    .frame(width: 150, height: 50)
+                    .background(RoundedRectangle(cornerRadius: 15.0).fill(.blue))
+                    .grayscale((colsIsUsed && rowsIsUsed) ? 0 : 1)
+                    .disabled(!colsIsUsed)
+                }
+                
+                ToolbarItem(placement: .bottomBar) {
+                    Button {
+                        matriz = nextStep(matriz: matriz)
+                    } label: {
+                        Text("Next Step")
+                            .foregroundStyle(.white)
+                    }
+                    .frame(width: 150, height: 50)
+                    .background(RoundedRectangle(cornerRadius: 15.0).fill(.blue))
+                    .grayscale(isFull ? 1 : 0)
+                    .disabled(isFull)
+                }
             }
-            .frame(width: 150, height: 50)
-            .background(RoundedRectangle(cornerRadius: 15.0).fill(.blue))
-            .grayscale(isFull ? 1 : 0)
-            .disabled(isFull)
-            
+            .onChange(of: colsString) { _,_ in
+                if(colsString != "") {
+                    colsIsUsed = true
+                }
+            }
+            .onChange(of: rowsString) { _,_ in
+                if(rowsString != "") {
+                    rowsIsUsed = true
+                }
+            }
+
         }
-        .padding()
     }
 }
 

@@ -82,18 +82,19 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
             }
             
             // Casos das bordas superior e inferior
-            if ((j > 0) && (j < matriz[i].count-1)) {
+            if ((j >= 1) && (j < matriz[i].count-1)) {
                 switch(i) {
                 case 0: do {
                     // TODO: Caso borda superior
-                    counter = matriz[i][j-1] + matriz[i+1][j-1] + matriz[i+1][j] + matriz[i+1][j+1] + matriz[i][j+1]
+                    counter = matriz[0][j-1] + matriz[1][j-1] + matriz[1][j] + matriz[1][j+1] + matriz[0][j+1]
+//                    print(counter)
                     
                     if (matriz[i][j] == 0) {
                         if (counter == 3) {
                             next[i][j] = 1
-                        } else if ((counter < 2) || (counter > 3)) {
-                            next[i][j] = 0
                         }
+                    } else if ((counter < 2) || (counter > 3)) {
+                        next[i][j] = 0
                     }
                     counter = 0
                     
@@ -106,10 +107,11 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
                     if (matriz[i][j] == 0) {
                         if (counter == 3) {
                             next[i][j] = 1
-                        } else if ((counter < 2) || (counter > 3)) {
-                            next[i][j] = 0
                         }
+                    } else if ((counter < 2) || (counter > 3)) {
+                        next[i][j] = 0
                     }
+                    
                     counter = 0
                     
                     break
@@ -128,10 +130,11 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
                     if (matriz[i][j] == 0) {
                         if (counter == 3) {
                             next[i][j] = 1
-                        } else if ((counter < 2) || (counter > 3)) {
-                            next[i][j] = 0
                         }
+                    } else if ((counter < 2) || (counter > 3)) {
+                        next[i][j] = 0
                     }
+                    
                     counter = 0
                     
                     break
@@ -143,10 +146,11 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
                     if (matriz[i][j] == 0) {
                         if (counter == 3) {
                             next[i][j] = 1
-                        } else if ((counter < 2) || (counter > 3)) {
-                            next[i][j] = 0
                         }
+                    } else if ((counter < 2) || (counter > 3)) {
+                        next[i][j] = 0
                     }
+                    
                     counter = 0
                     
                     break
