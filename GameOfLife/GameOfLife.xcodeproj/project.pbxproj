@@ -13,6 +13,14 @@
 		646D36E02B8D06CD00BAB7AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646D36DF2B8D06CD00BAB7AF /* Preview Assets.xcassets */; };
 		646D36E72B8E841200BAB7AF /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D36E62B8E841200BAB7AF /* Rules.swift */; };
 		646D36E92B8E842D00BAB7AF /* CreateMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D36E82B8E842D00BAB7AF /* CreateMatrix.swift */; };
+		646D36EC2B8FD2EF00BAB7AF /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646D36EB2B8FD2EF00BAB7AF /* ButtonsView.swift */; };
+		64D8C3862B90F57100FEE79E /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3852B90F57100FEE79E /* ConfigView.swift */; };
+		64D8C3892B91110A00FEE79E /* Vampire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3882B91110A00FEE79E /* Vampire.swift */; };
+		64D8C38B2B9119A800FEE79E /* Pulsar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C38A2B9119A800FEE79E /* Pulsar.swift */; };
+		64D8C38D2B911E5B00FEE79E /* Octogon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C38C2B911E5B00FEE79E /* Octogon.swift */; };
+		64D8C38F2B91201F00FEE79E /* p8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C38E2B91201F00FEE79E /* p8.swift */; };
+		64D8C3912B91220A00FEE79E /* Tumbler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3902B91220A00FEE79E /* Tumbler.swift */; };
+		64D8C3932B91272500FEE79E /* P15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3922B91272500FEE79E /* P15.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +31,14 @@
 		646D36DF2B8D06CD00BAB7AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		646D36E62B8E841200BAB7AF /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		646D36E82B8E842D00BAB7AF /* CreateMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatrix.swift; sourceTree = "<group>"; };
+		646D36EB2B8FD2EF00BAB7AF /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		64D8C3852B90F57100FEE79E /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
+		64D8C3882B91110A00FEE79E /* Vampire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vampire.swift; sourceTree = "<group>"; };
+		64D8C38A2B9119A800FEE79E /* Pulsar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulsar.swift; sourceTree = "<group>"; };
+		64D8C38C2B911E5B00FEE79E /* Octogon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Octogon.swift; sourceTree = "<group>"; };
+		64D8C38E2B91201F00FEE79E /* p8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p8.swift; sourceTree = "<group>"; };
+		64D8C3902B91220A00FEE79E /* Tumbler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tumbler.swift; sourceTree = "<group>"; };
+		64D8C3922B91272500FEE79E /* P15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P15.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +71,10 @@
 		646D36D72B8D06CC00BAB7AF /* GameOfLife */ = {
 			isa = PBXGroup;
 			children = (
+				646D36ED2B8FD43300BAB7AF /* Funcs */,
+				646D36EA2B8FD2E100BAB7AF /* Views */,
 				646D36D82B8D06CC00BAB7AF /* GameOfLifeApp.swift */,
 				646D36DA2B8D06CC00BAB7AF /* ContentView.swift */,
-				646D36E82B8E842D00BAB7AF /* CreateMatrix.swift */,
-				646D36E62B8E841200BAB7AF /* Rules.swift */,
 				646D36DC2B8D06CD00BAB7AF /* Assets.xcassets */,
 				646D36DE2B8D06CD00BAB7AF /* Preview Content */,
 			);
@@ -71,6 +87,38 @@
 				646D36DF2B8D06CD00BAB7AF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		646D36EA2B8FD2E100BAB7AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				646D36EB2B8FD2EF00BAB7AF /* ButtonsView.swift */,
+				64D8C3852B90F57100FEE79E /* ConfigView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		646D36ED2B8FD43300BAB7AF /* Funcs */ = {
+			isa = PBXGroup;
+			children = (
+				64D8C3872B9110F600FEE79E /* Patterns */,
+				646D36E82B8E842D00BAB7AF /* CreateMatrix.swift */,
+				646D36E62B8E841200BAB7AF /* Rules.swift */,
+			);
+			path = Funcs;
+			sourceTree = "<group>";
+		};
+		64D8C3872B9110F600FEE79E /* Patterns */ = {
+			isa = PBXGroup;
+			children = (
+				64D8C3882B91110A00FEE79E /* Vampire.swift */,
+				64D8C38A2B9119A800FEE79E /* Pulsar.swift */,
+				64D8C38C2B911E5B00FEE79E /* Octogon.swift */,
+				64D8C38E2B91201F00FEE79E /* p8.swift */,
+				64D8C3902B91220A00FEE79E /* Tumbler.swift */,
+				64D8C3922B91272500FEE79E /* P15.swift */,
+			);
+			path = Patterns;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +191,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64D8C38D2B911E5B00FEE79E /* Octogon.swift in Sources */,
+				64D8C3862B90F57100FEE79E /* ConfigView.swift in Sources */,
+				64D8C3932B91272500FEE79E /* P15.swift in Sources */,
 				646D36DB2B8D06CC00BAB7AF /* ContentView.swift in Sources */,
+				646D36EC2B8FD2EF00BAB7AF /* ButtonsView.swift in Sources */,
 				646D36D92B8D06CC00BAB7AF /* GameOfLifeApp.swift in Sources */,
 				646D36E92B8E842D00BAB7AF /* CreateMatrix.swift in Sources */,
 				646D36E72B8E841200BAB7AF /* Rules.swift in Sources */,
+				64D8C38F2B91201F00FEE79E /* p8.swift in Sources */,
+				64D8C38B2B9119A800FEE79E /* Pulsar.swift in Sources */,
+				64D8C3912B91220A00FEE79E /* Tumbler.swift in Sources */,
+				64D8C3892B91110A00FEE79E /* Vampire.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

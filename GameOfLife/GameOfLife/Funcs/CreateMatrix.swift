@@ -28,8 +28,8 @@ func createMatrix(cols: Int, rows: Int) -> [[Int]] {
     var matriz: [[Int]] = []
     var linha: [Int] = []
     
-    for _ in (0...cols-1) {
-        for _ in (0...rows-1) {
+    for _ in (0...rows-1) {
+        for _ in (0...cols-1) {
             linha.append(0)
         }
         matriz.append(linha)

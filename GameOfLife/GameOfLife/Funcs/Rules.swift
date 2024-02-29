@@ -7,6 +7,12 @@
 
 import Foundation
 
+// Leis Game of Life
+// 1. Qualquer célula viva com menos de dois vizinhos vivos morre, por subpopulação
+// 2. Qualquer célula viva com dois ou três vizinhos vivos vive para a próxima geração
+// 3. Qualquer célula viva com mais de três vizinhos vivos morre, por superpopulação
+// 4. Qualquer célula morta com exatamente três vizinhos vivos se torna uma célula viva, por reprodução
+
 func nextStep(matriz: [[Int]]) -> [[Int]] {
     var next = matriz
     
@@ -18,7 +24,7 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
             // Casos dos cantos
             switch(i,j) {
             case (0,0): do {
-                // TODO: Caso canto 1
+                // MARK: Caso canto 1
                 counter = matriz[0][1] + matriz[1][1] + matriz[1][0]
                 
                 if (matriz[i][j] == 0) {
@@ -33,7 +39,7 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
                 break
             }
             case (0, matriz.count-1): do {
-                // TODO: Caso canto 2
+                // MARK: Caso canto 2
                 counter = matriz[0][j-1] + matriz[i+1][j-1] + matriz[i+1][j]
                 
                 if (matriz[i][j] == 0) {
@@ -48,7 +54,7 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
                 break
             }
             case (matriz.count-1, 0): do {
-                // TODO: Caso canto 3
+                // MARK: Caso canto 3
                 counter = matriz[i-1][0] + matriz[i-1][j+1] + matriz[i][j+1]
                 
                 if (matriz[i][j] == 0) {
@@ -63,7 +69,7 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
                 break
             }
             case (matriz.count-1, matriz.count-1): do {
-                // TODO: Caso canto 4
+                // MARK: Caso canto 4
                 counter = matriz[i-1][j] + matriz[i-1][j-1] + matriz[i][j-1]
                 
                 if (matriz[i][j] == 0) {
@@ -85,7 +91,7 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
             if ((j >= 1) && (j < matriz[i].count-1)) {
                 switch(i) {
                 case 0: do {
-                    // TODO: Caso borda superior
+                    // MARK: Caso borda superior
                     counter = matriz[0][j-1] + matriz[1][j-1] + matriz[1][j] + matriz[1][j+1] + matriz[0][j+1]
 //                    print(counter)
                     
@@ -101,7 +107,7 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
                     break
                 }
                 case matriz.count-1: do {
-                    // TODO: Caso borda inferior
+                    // MARK: Caso borda inferior
                     counter = matriz[i][j-1] + matriz[i-1][j-1] + matriz[i-1][j] + matriz[i-1][j+1] + matriz[i][j+1]
                     
                     if (matriz[i][j] == 0) {
@@ -124,7 +130,7 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
             if ((i > 0) && (i < matriz.count-1)) {
                 switch(j) {
                 case 0: do {
-                    // TODO: Caso borda esquerda
+                    // MARK: Caso borda esquerda
                     counter = matriz[i-1][0] + matriz[i-1][1] + matriz[i][1] + matriz[i+1][1] + matriz[i+1][0]
                     
                     if (matriz[i][j] == 0) {
@@ -140,7 +146,7 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
                     break
                 }
                 case matriz.count-1: do {
-                    // TODO: Caso borda direita
+                    // MARK: Caso borda direita
                     counter = matriz[i-1][j] + matriz[i-1][j-1] + matriz[i][j-1] + matriz[i+1][j-1] + matriz[i+1][j]
                     
                     if (matriz[i][j] == 0) {
@@ -159,7 +165,7 @@ func nextStep(matriz: [[Int]]) -> [[Int]] {
                 }
             }
             
-            // Casos gerais
+            // MARK: Casos gerais
             if (((i > 0) && (i < matriz.count-1)) && ((j > 0) && (j < matriz[i].count-1))) {
                 counter = matriz[i-1][j-1] + matriz[i-1][j] + matriz[i-1][j+1] + matriz[i][j+1] + matriz[i+1][j+1] + matriz[i+1][j] + matriz[i+1][j-1] + matriz[i][j-1]
                 
