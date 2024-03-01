@@ -116,6 +116,8 @@ struct ContentView: View {
                 .background(Circle().foregroundStyle(.blue))
                 
                 Slider(value: $speed, in: -1...(-0.01))
+                
+                
             }
             .padding()
             .toolbar {
@@ -129,18 +131,75 @@ struct ContentView: View {
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        cols = Int(colsString) ?? 5
-                        rows = Int(rowsString) ?? 5
-                        
-//                        matriz = createRandomMatrix(cols: cols, rows: rows)
-                        matriz = tumbler()
-                        if(isFull) {
-                            isFull.toggle()
+                    Menu {
+                        Button {
+                            cols = Int(colsString) ?? 5
+                            rows = Int(rowsString) ?? 5
+                            
+                            matriz = createRandomMatrix(cols: cols, rows: rows)
+                            if(isFull) {
+                                isFull.toggle()
+                            }
+                        } label: {
+                            Text("Random")
                         }
+                        
+                        Button {
+                            matriz = vampire()
+                        } label: {
+                            Text("Vampire")
+                        }
+                        
+                        Button {
+                            matriz = pulsar()
+                        } label: {
+                            Text("Pulsar")
+                        }
+                        
+                        Button {
+                            matriz = octogon()
+                        } label: {
+                            Text("Octogon")
+                        }
+                        
+                        Button {
+                            matriz = tumbler()
+                        } label: {
+                            Text("Tumbler")
+                        }
+                        
+                        Button {
+                            matriz = cloverleaf()
+                        } label: {
+                            Text("Cloverleaf")
+                        }
+                        
+                        Button {
+                            matriz = hexag()
+                        } label: {
+                            Text("Hexag")
+                        }
+                        
+                        Button {
+                            matriz = bullet()
+                        } label: {
+                            Text("Bullet")
+                        }
+                        
+                        Button {
+                            matriz = p8()
+                        } label: {
+                            Text("P15")
+                        }
+                        
+                        Button {
+                            matriz = p15()
+                        } label: {
+                            Text("P15")
+                        }
+                        
                     } label: {
-                        Image(systemName: "shuffle.circle")
-                            .font(.title2)
+                        Image(systemName: "pencil")
                     }
                 }
                 

@@ -21,6 +21,9 @@
 		64D8C38F2B91201F00FEE79E /* p8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C38E2B91201F00FEE79E /* p8.swift */; };
 		64D8C3912B91220A00FEE79E /* Tumbler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3902B91220A00FEE79E /* Tumbler.swift */; };
 		64D8C3932B91272500FEE79E /* P15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3922B91272500FEE79E /* P15.swift */; };
+		64D8C3952B920CA500FEE79E /* Cloverleaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3942B920CA500FEE79E /* Cloverleaf.swift */; };
+		64D8C3972B92119A00FEE79E /* Hexag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3962B92119A00FEE79E /* Hexag.swift */; };
+		64D8C3992B92134500FEE79E /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3982B92134500FEE79E /* Bullet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		64D8C38E2B91201F00FEE79E /* p8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p8.swift; sourceTree = "<group>"; };
 		64D8C3902B91220A00FEE79E /* Tumbler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tumbler.swift; sourceTree = "<group>"; };
 		64D8C3922B91272500FEE79E /* P15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P15.swift; sourceTree = "<group>"; };
+		64D8C3942B920CA500FEE79E /* Cloverleaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloverleaf.swift; sourceTree = "<group>"; };
+		64D8C3962B92119A00FEE79E /* Hexag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexag.swift; sourceTree = "<group>"; };
+		64D8C3982B92134500FEE79E /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +120,11 @@
 				64D8C3882B91110A00FEE79E /* Vampire.swift */,
 				64D8C38A2B9119A800FEE79E /* Pulsar.swift */,
 				64D8C38C2B911E5B00FEE79E /* Octogon.swift */,
-				64D8C38E2B91201F00FEE79E /* p8.swift */,
 				64D8C3902B91220A00FEE79E /* Tumbler.swift */,
+				64D8C3942B920CA500FEE79E /* Cloverleaf.swift */,
+				64D8C3962B92119A00FEE79E /* Hexag.swift */,
+				64D8C3982B92134500FEE79E /* Bullet.swift */,
+				64D8C38E2B91201F00FEE79E /* p8.swift */,
 				64D8C3922B91272500FEE79E /* P15.swift */,
 			);
 			path = Patterns;
@@ -192,6 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				64D8C38D2B911E5B00FEE79E /* Octogon.swift in Sources */,
+				64D8C3972B92119A00FEE79E /* Hexag.swift in Sources */,
+				64D8C3992B92134500FEE79E /* Bullet.swift in Sources */,
+				64D8C3952B920CA500FEE79E /* Cloverleaf.swift in Sources */,
 				64D8C3862B90F57100FEE79E /* ConfigView.swift in Sources */,
 				64D8C3932B91272500FEE79E /* P15.swift in Sources */,
 				646D36DB2B8D06CC00BAB7AF /* ContentView.swift in Sources */,
