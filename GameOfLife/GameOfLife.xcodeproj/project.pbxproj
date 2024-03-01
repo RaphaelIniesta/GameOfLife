@@ -24,6 +24,7 @@
 		64D8C3952B920CA500FEE79E /* Cloverleaf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3942B920CA500FEE79E /* Cloverleaf.swift */; };
 		64D8C3972B92119A00FEE79E /* Hexag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3962B92119A00FEE79E /* Hexag.swift */; };
 		64D8C3992B92134500FEE79E /* Bullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C3982B92134500FEE79E /* Bullet.swift */; };
+		64D8C39C2B9242E600FEE79E /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D8C39B2B9242E600FEE79E /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		64D8C3942B920CA500FEE79E /* Cloverleaf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloverleaf.swift; sourceTree = "<group>"; };
 		64D8C3962B92119A00FEE79E /* Hexag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hexag.swift; sourceTree = "<group>"; };
 		64D8C3982B92134500FEE79E /* Bullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bullet.swift; sourceTree = "<group>"; };
+		64D8C39B2B9242E600FEE79E /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				646D36EB2B8FD2EF00BAB7AF /* ButtonsView.swift */,
 				64D8C3852B90F57100FEE79E /* ConfigView.swift */,
+				64D8C39B2B9242E600FEE79E /* MenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				646D36DB2B8D06CC00BAB7AF /* ContentView.swift in Sources */,
 				646D36EC2B8FD2EF00BAB7AF /* ButtonsView.swift in Sources */,
 				646D36D92B8D06CC00BAB7AF /* GameOfLifeApp.swift in Sources */,
+				64D8C39C2B9242E600FEE79E /* MenuView.swift in Sources */,
 				646D36E92B8E842D00BAB7AF /* CreateMatrix.swift in Sources */,
 				646D36E72B8E841200BAB7AF /* Rules.swift in Sources */,
 				64D8C38F2B91201F00FEE79E /* p8.swift in Sources */,

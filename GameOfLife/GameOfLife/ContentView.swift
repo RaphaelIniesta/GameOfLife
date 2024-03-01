@@ -94,7 +94,7 @@ struct ContentView: View {
                             .textFieldStyle(.roundedBorder)
                             .keyboardType(.decimalPad)
                     }
-                }
+                }.padding(.bottom, 15)
                 
                 Button {
                     print("Teste")
@@ -131,76 +131,7 @@ struct ContentView: View {
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Menu {
-                        Button {
-                            cols = Int(colsString) ?? 5
-                            rows = Int(rowsString) ?? 5
-                            
-                            matriz = createRandomMatrix(cols: cols, rows: rows)
-                            if(isFull) {
-                                isFull.toggle()
-                            }
-                        } label: {
-                            Text("Random")
-                        }
-                        
-                        Button {
-                            matriz = vampire()
-                        } label: {
-                            Text("Vampire")
-                        }
-                        
-                        Button {
-                            matriz = pulsar()
-                        } label: {
-                            Text("Pulsar")
-                        }
-                        
-                        Button {
-                            matriz = octogon()
-                        } label: {
-                            Text("Octogon")
-                        }
-                        
-                        Button {
-                            matriz = tumbler()
-                        } label: {
-                            Text("Tumbler")
-                        }
-                        
-                        Button {
-                            matriz = cloverleaf()
-                        } label: {
-                            Text("Cloverleaf")
-                        }
-                        
-                        Button {
-                            matriz = hexag()
-                        } label: {
-                            Text("Hexag")
-                        }
-                        
-                        Button {
-                            matriz = bullet()
-                        } label: {
-                            Text("Bullet")
-                        }
-                        
-                        Button {
-                            matriz = p8()
-                        } label: {
-                            Text("P15")
-                        }
-                        
-                        Button {
-                            matriz = p15()
-                        } label: {
-                            Text("P15")
-                        }
-                        
-                    } label: {
-                        Image(systemName: "pencil")
-                    }
+                    MenuView(cols: $cols, rows: $rows, colsString: $colsString, rowsString: $rowsString, isFull: $isFull, matriz: $matriz)
                 }
                 
                 ToolbarItem(placement: .bottomBar) {
